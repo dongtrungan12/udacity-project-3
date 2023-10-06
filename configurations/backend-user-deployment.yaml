@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-user
+spec:
+  selector:
+    matchLabels:
+      run: backend-user
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: backend-user
+    spec:
+      containers:
+      - name: backend-user
+        image: docker.io/dtrungan/udagram-api-user:v9
+        env:
+        - name: POSTGRES_USERNAME
+          value: postgres
+        - name: POSTGRES_PASSWORD
+          value: mypassword
+        - name: POSTGRES_HOST
+          value: rds.cdr80dbhqnnv.us-east-1.rds.amazonaws.com
+        - name: POSTGRES_DB
+          value: rds
+        - name: AWS_BUCKET
+          value: my-bucket-8121998
+        - name: AWS_REGION
+          value: us-east-1
+        - name: AWS_PROFILE
+          value: default
+        - name: JWT_SECRET
+          value: testing
+        - name: URL
+          value: http://localhost:8100
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 200m
+          requests:
+            cpu: 100m
