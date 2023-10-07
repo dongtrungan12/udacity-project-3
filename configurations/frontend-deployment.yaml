@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: docker.io/dtrungan/udagram-frontend:v9
+        image: docker.io/dtrungan/udagram-frontend:v10
         ports: 
         - containerPort: 80
         resources:
