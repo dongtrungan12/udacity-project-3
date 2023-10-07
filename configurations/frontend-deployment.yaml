@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: docker.io/dtrungan/udagram-frontend:v10
+        image: docker.io/dtrungan/udagram-frontend:v11
+        imagePullPolicy: Always  
         ports: 
         - containerPort: 80
         resources:
@@ -22,3 +23,5 @@ spec:
             cpu: 500m
           requests:
             cpu: 200m
+      restartPolicy: Always      
+

@@ -15,4 +15,4 @@ services:
   frontend:
     build:
       context: ./udagram-frontend
-    image: udagram-frontend:v10
+    image: udagram-frontend:v11
