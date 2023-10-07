@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend-feed
-        image: docker.io/dtrungan/udagram-api-feed:lastest
+        image: docker.io/dtrungan/udagram-api-feed:v9
         env:
         - name: POSTGRES_USERNAME
           value: postgres
