@@ -16,13 +16,6 @@ spec:
       - name: backend-feed
         image: docker.io/dtrungan/udagram-api-feed:v9
         imagePullPolicy: Always  
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "250m"
-          limits:
-            memory: "1024Mi"
-            cpu: "500m"
         env:
         - name: POSTGRES_USERNAME
           value: postgres
@@ -43,6 +36,11 @@ spec:
         - name: URL
           value: http://localhost:8100
         ports:
-        - containerPort: 80      
+        - containerPort: 80    
+        resources:
+          limits:
+            cpu: 200m
+          requests:
+            cpu: 100m  
       restartPolicy: Always
         
