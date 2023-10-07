@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: reverseproxy
-        image: docker.io/dtrungan/reverseproxy:v9
+        image: docker.io/dtrungan/reverseproxy:v10
         ports:
         - containerPort: 80
         resources:
